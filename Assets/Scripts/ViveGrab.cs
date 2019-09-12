@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
+using Valve.VR;
+
 public class ViveGrabObject : MonoBehaviour {
     private SteamVR_TrackedObject trackedObj;
     private SteamVR_Controller.Device Controller
