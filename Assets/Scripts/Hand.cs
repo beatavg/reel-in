@@ -5,6 +5,7 @@ using Valve.VR;
 
 public class Hand : MonoBehaviour
 {
+    public AudioSource pickupSource;
     public SteamVR_Action_Boolean m_GrabAction = null;
 
     private SteamVR_Behaviour_Pose m_Pose = null;
@@ -17,6 +18,7 @@ public class Hand : MonoBehaviour
     {
         m_Pose = GetComponent<SteamVR_Behaviour_Pose>();
         m_Joint = GetComponent<FixedJoint>();
+        pickupSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -74,6 +76,7 @@ public class Hand : MonoBehaviour
 
         //Set active hand
         m_CurrentInteractable.m_ActiveHand = this;
+        pickupSource.Play();
     }
 
     private void Drop()
