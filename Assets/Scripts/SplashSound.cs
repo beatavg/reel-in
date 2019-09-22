@@ -13,17 +13,22 @@ public class SplashSound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SoundOut());
+        StartCoroutine(SoundOut);
         splash = GetComponent<AudioSource>();
     }
 
-    IEnumerator SoundOut()
-     {
-         while (keepPlaying){
-             splash.Play();  
-             Debug.Log("SPLASH");
-             yield return new WaitForSeconds(wait);
-         }
+    IEnumerator SoundOut
+    {
+        get
+        {
+            while (keepPlaying)
+            {
+                splash.Play();
+                Debug.Log("SPLASH");
+                yield return new WaitForSeconds(wait);
+            }
 
 
+        }
+    }
 }
